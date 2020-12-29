@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item':true,
+'list-group-item-success':btnLoveIt===true,
+'list-group-item-danger':btnHateIt===true}">
+<div class="container">
+  <div class="row">
+<div class="col-xs-12">
+  <h4 class="col-xs-6"[ngStyle]="{color:getColor()}"  >{{ postItemTitle }} </h4>
+  <p class="col-xs-3">Mis à jour : {{ lastUpdate | date:'short' }}</p>
+</div>
+</div>
+</div>
+  <p>{{ postItemContent }}</p>
+
+  <button class="btn btn-success"
+  (click)="onLove()">Love It</button>
+
+  <button class="btn btn-danger"
+            (click)="onHate()">Don't Love It</button>
+</li>

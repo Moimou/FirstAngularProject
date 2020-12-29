@@ -1,33 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-post-list-component',
+  templateUrl: './post-list-component.component.html',
+  styleUrls: ['./post-list-component.component.scss']
 })
-
-export class AppComponent {
-  isAuth =false;
-  lastUpdate = new Date();
-  Date =new Date();
-
-
-
-  appareils =[
-    {
-      name:'Machine à laver',
-      status:'allumé'
-
-    },
-    {
-      name:'Télévision',
-      status:'allumé'
-    },
-    {
-      name:'Ordinateur',
-      status:'éteint'
-    }
-  ];
+export class PostListComponentComponent implements OnInit {
 
 
   posts = [
@@ -51,23 +29,9 @@ export class AppComponent {
         }
    ];
 
-  /*appareilOne='Machine à laver';
-  appareilTwo='Frigo';
-  appareilThree = 'Ordinateur';*/
+  constructor() { }
 
-  constructor(){
-    setTimeout(
-      ()=>{
-        this.isAuth = true;
-      },4000
-    );
+  ngOnInit(): void {
   }
-
-  onAllumer(){
-    console.log("on allume tout");
-  }
-
 
 }
-
-
